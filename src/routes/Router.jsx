@@ -1,12 +1,8 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { auth } from "../firebase/firebaseConfig";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "../pages/Login";
 import Cadastro from "../pages/Cadastro";
 import Principal from "../pages/Principal";
-
-function PrivateRoute({ children }) {
-  return auth.currentUser ? children : <Navigate to="/" replace />;
-}
+import PrivateRoute from "./PrivateRoute";
 
 function Router() {
   return (
